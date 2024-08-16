@@ -3,92 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Pertanian</title>
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-green-900 text-white relative">
-        <nav class="container mx-auto flex justify-between items-center p-2">
-            <!-- Logo -->
-            <div>
-                <img src="logo_light.png" alt="Logo" class="h-20 w-auto">
-            </div>
-            <!-- Navbar Menu -->
-            <div class="hidden md:flex space-x-6">
-                <a href="#" class="hover:underline">Home</a>
-                <a href="#" class="hover:underline">Layanan</a>
-                <div class="relative">
-                    <a href="#" class="hover:underline">Kategori Alat</a>
-                    <!-- Dropdown for categories could go here -->
-                    <a href="#" class="px-8 py-2 rounded-2xl hover:bg-green-700 ml-10 mb" style="background-color: #429C4A;">Login</a>
+<body class="bg-white font-[Nunito] text-white">
+    <header class="bg-[#1A4D2E]">
+        <nav class="container mx-auto">
+            <div class="navbar text-white">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 6h16M4 12h8m-8 6h16" />
+                      </svg>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                      <li><a>Home</a></li>
+                      <li><a>Layanan</a></li>
+                      <li>
+                        <a>Kategori Alat</a>
+                        <ul class="p-2">
+                          <li><a>Submenu 1</a></li>
+                          <li><a>Submenu 2</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <img src="logo_light.png" alt="Logo" class="h-20 w-auto">
+                </div>
+                <div class="navbar-end">
+                    <ul class="menu menu-horizontal px-1 hidden lg:flex">
+                        <li><a>Home</a></li>
+                        <li><a>Layanan</a></li>
+                        <li>
+                          <details>
+                            <summary>Kategori Alat</summary>
+                            <ul class="p-2">
+                              <li><a>Submenu 1</a></li>
+                              <li><a>Submenu 2</a></li>
+                            </ul>
+                          </details>
+                        </li>
+                      </ul>
+                  <a class="ml-2 rounded-2xl py-2 px-8 bg-[#429C4A]">Login</a>
+                </div>
+              </div>
+              </nav>
+    </header>
+   
+    <div class="hero min-h-screen bg-no-repeat bg-[left_bottom_3rem] bg-cover bg-[url('/bg.png')]">
+        <div class="hero-content text-center text-white -mt-40 flex flex-col items-center justify-center">
+            <div class="max-w-7xl">
+                <h1 class="text-2xl md:text-[80px] font-semibold font-[Poppins] leading-tight">
+                    Optimalkan Pertanian Anda dengan Alat yang Tepat.
+                </h1>
+                <div class="bg-white rounded-3xl flex items-center shadow-lg mt-10 max-w-3xl mx-auto">
+                    <input type="text" class="bg-transparent p-3 text-gray-800 focus:outline-none flex-grow">
+                    <button class="p-2 text-white rounded-3xl hover:bg-green-600 mr-1" style="background-color:#146B1C;">
+                        <i class="fa-solid fa-magnifying-glass p-1"></i>Search
+                    </button>
                 </div>
             </div>
-            <!-- Hamburger Menu for Mobile -->
-            <div class="md:hidden">
-                <button id="mobile-menu-button">
-                    <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-            </div>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-green-900 text-white p-4">
-            <a href="#" class="block py-2 hover:underline">Home</a>
-            <a href="#" class="block py-2 hover:underline">Layanan</a>
-            <a href="#" class="block py-2 hover:underline">Kategori Alat</a>
-            <a href="#" class="block py-2 px-4 w-20 mt-2 rounded-2xl hover:bg-green-700" style="background-color: #429C4A;">Login</a>
         </div>
-    </header>
-    <div class="hero-section">
-        
-        <h1 class="text-4xl md:text-6xl font-semibold text-white text-center max-w-5xl mx-auto -mt-80">Optimalkan Pertanian Anda dengan Alat yang Tepat.</h1>
-        <div class="backdrop-blur-none bg-white rounded-3xl flex items-center shadow-lg mt-10 w-full max-w-3xl">
-            <input type="text" class="bg-transparent p-3 text-gray-800 focus:outline-none flex-grow">
-            <button class="p-2 text-white rounded-3xl hover:bg-green-600 mr-1" style="background-color:#146B1C;"><i class="fa-solid fa-magnifying-glass p-1"></i>Search</button>
-        </div>
-        
-        
     </div>
-    <section class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-7 -mt-48">
-        <div class="relative bg-[#1A4D2E] h-96 p-8 shadow-lg rounded-3xl">
-            <div class="relative">
-                <img src="ri_plant-fill.svg" alt="Jumlah Alat" class="mb-8">
-                <span class="absolute top-2 left-8 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full border-2">!</span>
-            </div>
-            <h2 class="text-5xl font-semibold text-white mb-14">Jumlah Alat</h2>
-            <p class="text-9xl font-extrabold text-white text-end">34</p>
-        </div>
-        <div class="relative bg-[#1A4D2E] h-96 p-8 shadow-lg rounded-3xl">
-            <div class="relative">
-                <img src="eva_people-fill.svg" alt="Jumlah Alat" class="mb-8">
-                <span class="absolute top-1 left-9 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full border-2">!</span>
-            </div>
-            <h2 class="text-5xl font-semibold text-white mb-14">Jumlah Alat</h2>
-            <p class="text-9xl font-extrabold text-white text-end">34</p>
-        </div>
-        <div class="relative bg-[#1A4D2E] h-96 p-8 shadow-lg rounded-3xl">
-            <div class="relative">
-                <img src="eva_people-fill.svg" alt="Jumlah Alat" class="mb-8">
-                <span class="absolute top-1 left-9 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full border-2">!</span>
-            </div>
-            <h2 class="text-5xl font-semibold text-white mb-14">Jumlah Alat</h2>
-            <p class="text-9xl font-extrabold text-white text-end">34</p>
-        </div>
-    </section>
-    
     
 
+    <div class="container mx-auto grid grid-cols-3 md:grid-cols-3 gap-5 md:gap-9 -mt-60">
+        <div class="card bg-[#1A4D2E] h-28 md:h-96 shadow-xl relative">
+            <div class="card-body p-3 md:p-8 flex flex-col">
+                <img src="ri_plant-fill.svg" alt="Jumlah Alat" class="w-6 h-6 md:h-16 md:w-16 md:mb-8">
+                <h2 class="card-title text-sm md:text-6xl text-center">Jumlah Alat</h2>
+                <!-- Wrapper to control position of the number -->
+                <div class="absolute bottom-4 right-4">
+                    <h1 class="text-xl md:text-8xl font-extrabold">34</h1>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-[#1A4D2E] h-28 md:h-96 shadow-xl relative">
+            <div class="card-body p-3 md:p-8 flex flex-col">
+                <img src="eva_people-fill.svg" alt="Jumlah Alat" class="w-6 h-6 md:h-16 md:w-16 md:mb-8">
+                <h2 class="card-title text-sm md:text-6xl text-center">Jumlah Alat</h2>
+                <!-- Wrapper to control position of the number -->
+                <div class="absolute bottom-4 right-4">
+                    <h1 class="text-xl md:text-8xl font-extrabold">34</h1>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-[#1A4D2E] h-28 md:h-96 shadow-xl relative">
+            <div class="card-body p-3 md:p-8 flex flex-col">
+                <img src="eva_people-fill.svg" alt="Jumlah Alat" class="w-6 h-6 md:h-16 md:w-16 md:mb-8">
+                <div class="badge badge-error md:top-10 left-7 md:left-[75px] absolute badge-sm border-white">!</div>
+                <h2 class="card-title text-sm md:text-6xl text-center">Jumlah Alat</h2>
+                <!-- Wrapper to control position of the number -->
+                <div class="absolute bottom-4 right-4">
+                    <h1 class="text-xl md:text-8xl font-extrabold">34</h1>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="about-section h-screen -mt-40">
-        <div class="container mx-auto mt-96">     
-            <h1 class="text-3xl md:text-6xl font-semibold">Tentang Kami</h1>
+    <div class="md:h-screen text-black flex font-[Poppins] mt-40 md:-mt-40 bg-no-repeat bg-cover bg-[url('/objects.svg')]">
+        <div class="container mx-auto -mt-30 md:mt-96">     
+            <h1 class="text-5xl md:text-6xl font-semibold">Tentang Kami</h1>
             <div class="border-8 border-[#259E30] w-[22.2rem] -mt-5"></div>
-            <p class="text-3xl mt-10 ">
+            <p class="text-sm mt-10 md:text-3xl ">
                 BSIP Gorontalo berkomitmen untuk menyediakan layanan manajemen yang efektif dengan memastikan semua alat pertanian terkelola dengan baik dan siap digunakan kapan saja. Kami percaya bahwa dengan sistem yang tepat, operasional pertanian dapat berjalan lebih lancar dan efisien. 
                 <br>
                 <br>
@@ -96,8 +129,8 @@
             </p>
         </div>
     </div>
-    
-    <footer class="text-white mt-10">
+
+    <footer class="text-white bg-[#001C0B] mt-10">
         <div class="container mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-4 py-24">
             <!-- Kontak Kami Section -->
             <div class="mb-8">
@@ -116,12 +149,12 @@
         
             <!-- Map Section -->
             <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.3520490752413!2d123.11686579872014!3d0.5525554164294187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x327ed5a6d6802eed%3A0x56bdf0afcf4fd9b0!2sBadan%20Standardisasi%20Intrumen%20Pertanian%20(BSIP)%20Gorontalo!5e0!3m2!1sid!2sid!4v1723743899093!5m2!1sid!2sid" width="469" height="203" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-2xl"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.3520490752413!2d123.11686579872014!3d0.5525554164294187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x327ed5a6d6802eed%3A0x56bdf0afcf4fd9b0!2sBadan%20Standardisasi%20Intrumen%20Pertanian%20(BSIP)%20Gorontalo!5e0!3m2!1sid!2sid!4v1723743899093!5m2!1sid!2sid" height="203" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-2xl md:w-96 "></iframe>
             </div>
         </div>
         
     
-        <div class="border-t-custom border-grey-200 p-3">
+        <div class="border-t border-grey p-3">
             <div class="container mx-auto p-4 flex justify-between items-center">
                 <!-- Copyright Section -->
                 <p class="text-sm">
@@ -151,13 +184,7 @@
             </div>
         </div>
     </footer>
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
+
 </body>
 </html>
